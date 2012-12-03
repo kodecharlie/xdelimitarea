@@ -1,0 +1,141 @@
+This is xdelimitarea.info, produced by makeinfo version 4.1 from
+xdelimitarea.texi.
+
+   This document describes xdelimitarea, an X Windows utility for
+delimiting an arbitrary rectangular area on your computer screen.
+
+   Copyright (C) 2002 Free Software Foundation, Inc.
+
+
+File: xdelimitarea.info,  Node: Top,  Next: Origins,  Prev: (dir),  Up: (dir)
+
+What is xdelimitarea?
+*********************
+
+   `xdelimitarea' is an X Windows utility that provides a non-intrusive
+way to find out the position (with respect to the root window) and the
+dimensions of an arbitrary rectangular area on your computer screen.
+This utility could be helpful to, say, GUI or web designers who need to
+know precisely the location and dimensions of some visual component on
+the screen.
+
+* Menu:
+
+* Origins::                Program origins.
+* How it works::           Program operation.
+* Command-line options::   Run-time options.
+* X Resources::            Allowable X Windows resources.
+* Concept Index::          Index to special topics.
+
+
+File: xdelimitarea.info,  Node: Origins,  Next: How it works,  Prev: Top,  Up: Top
+
+Origins
+*******
+
+   Tom Tromey first suggested this idea to me in 1993 when I was
+developing the rendering code for a data-analysis package called the
+SigniScope.  Other ideas in `xdelimitarea' (as well as some code) are
+borrowed from Jamie Zawinski's `xscreensaver' program.
+
+   This package was developed under Redhat 7.3 in the country of
+Uganda.  Thanks to AED <http://www.aed.org> for donating the computer
+equipment and the Internet hook-up where I work.
+
+
+File: xdelimitarea.info,  Node: How it works,  Next: Command-line options,  Prev: Origins,  Up: Top
+
+How it works
+************
+
+   After you have installed the package, just type `xdelimitarea' from
+your command-line.  Visually, nothing of interest happens.  Crucially,
+however, `xdelimitarea' has grabbed your keyboard, and the only
+graceful way to exit now is to either type 'q', 'Q', or 'Control-c', if
+that is what you want to do.
+
+   To delimit some area on the screen, just click Button1 on your mouse
+and drag.  You should see a small window pop up that reads out the
+location (with respect to the root window) and the dimensions of the
+area you have outlined.  That's all there is to it!
+
+
+File: xdelimitarea.info,  Node: Command-line options,  Next: X Resources,  Prev: How it works,  Up: Top
+
+Command-line options
+********************
+
+   The possible command-line options for `xdelimitarea' are:
+
+   * `-help' is used to find out what command-line options are possible.
+
+   * `-fg' is used to specify the color of the text drawn in the
+     readout window as you delimit some region on your computer screen.
+
+   * `-bg' is used to specify the background color of the readout
+     window.
+
+   * `-font' is used to specify the name of the font used to render
+     text in the readout window.
+
+
+   With the exception of `-help', all command-line options can
+alternatively be specified as X Windows resources in, for example, your
+`.Xdefaults' file.  *Note X Resources::, for details.
+
+
+File: xdelimitarea.info,  Node: X Resources,  Next: Concept Index,  Prev: Command-line options,  Up: Top
+
+X Resources
+***********
+
+   The readout window for `xdelimitarea' can be configured with X
+Windows resources by, for example, adding suitable lines to your
+`.Xdefaults' file.
+
+   * Specify the default background for the readout window by adding a
+     line like this:
+
+            xdelimitarea.*.background:         green
+
+
+   * Specify the default foreground for the readout window by adding a
+     line like this:
+
+            xdelimitarea.*.foreground:         red
+
+
+   * Specify the default font for the readout window by adding a line
+     like this:
+
+            xdelimitarea.*.font:         -adobe-helvetica-bold-*-normal-*-12-*-*-*-*-*-*-*
+
+
+
+
+File: xdelimitarea.info,  Node: Concept Index,  Prev: X Resources,  Up: Top
+
+Concept Index
+*************
+
+* Menu:
+
+* background:                            X Resources.
+* font:                                  X Resources.
+* foreground:                            X Resources.
+* origins:                               Origins.
+* program operation:                     How it works.
+* program options:                       Command-line options.
+* X Windows resources:                   X Resources.
+
+
+
+Tag Table:
+Node: Top272
+Node: Origins1021
+Node: How it works1569
+Node: Command-line options2268
+Node: X Resources3065
+Node: Concept Index3824
+
+End Tag Table

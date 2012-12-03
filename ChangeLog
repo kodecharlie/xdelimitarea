@@ -1,0 +1,32 @@
+2000-01-02    <cread@localhost.localdomain>
+
+	* windows.c (create_full_screen_window): set up crosshairs
+	cursor as default.
+
+2002-11-24    <cread@localhost.localdomain>
+
+	* xdelimitarea.c (usage): added.
+	(main): call usage.
+	(parse_command_line): pass argc by reference.
+
+	* NEWS: created.
+
+	* AUTHORS: created.
+
+	* README: Describe installation.
+
+	* xdelimitarea.c (get_resource): added assert.
+	(main): use get_resource.
+	(DEFAULT_FG): added for specifying default for command-line
+	options.
+	(DEFAULT_BG): ditto.
+	(DEFAULT_FONT): ditto.
+
+	* xdelimitarea.texi: finished.
+
+2002-11-21    <cread@localhost.localdomain>
+
+	* Makefile.am: created.
+
+	* configure.in: created.
+

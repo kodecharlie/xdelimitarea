@@ -1,0 +1,156 @@
+\input texinfo   @c -*-texinfo-*-
+@c %**start of header
+@setfilename xdelimitarea.info
+@settitle xdelimitarea
+@c %**end of header
+
+@c Summary Description and Copyright
+@ifinfo
+This document describes xdelimitarea, an X Windows
+utility for delimiting an arbitrary rectangular area
+on your computer screen.
+
+Copyright @copyright{} 2002 Free Software Foundation, Inc.
+@end ifinfo
+
+@c Title and Copyright
+@titlepage
+@sp 10
+@title xdelimitarea
+
+@c The following two commands start the copyright page.
+@page
+@vskip 0pt plus 1filll
+Copyright @copyright{} 2002 Free Software Foundation, Inc.
+@end titlepage
+
+@c Output the table of the contents at the beginning.
+@contents
+
+@c Top Node and Master Menu
+@ifnottex
+@node Top, Origins, (dir), (dir)
+@top What is xdelimitarea?
+@code{xdelimitarea} is an X Windows utility that provides
+a non-intrusive way to find out the position (with
+respect to the root window) and the dimensions of
+an arbitrary rectangular area on your computer screen.
+This utility could be helpful to, say, GUI or web
+designers who need to know precisely the location
+and dimensions of some visual component on the screen.
+@end ifnottex
+
+@menu
+* Origins::                Program origins.
+* How it works::           Program operation.
+* Command-line options::   Run-time options.
+* X Resources::            Allowable X Windows resources.
+* Concept Index::          Index to special topics.
+@end menu
+
+@c Body
+@node Origins, How it works, Top, Top
+@chapter Origins
+@cindex origins
+
+Tom Tromey first suggested this idea to me in 1993 when
+I was developing the rendering code for a data-analysis
+package called the SigniScope.  Other ideas in @code{xdelimitarea}
+(as well as some code) are borrowed from Jamie Zawinski's
+@code{xscreensaver} program.
+
+This package was developed under Redhat 7.3 in the country
+of Uganda.  Thanks to AED <http://www.aed.org> for donating
+the computer equipment and the Internet hook-up where I work.
+
+@node How it works, Command-line options, Origins, Top
+@chapter How it works
+@cindex program operation
+
+After you have installed the package, just type @code{xdelimitarea}
+from your command-line.  Visually, nothing of interest happens.
+Crucially, however, @code{xdelimitarea} has grabbed your keyboard,
+and the only graceful way to exit now is to either type 'q', 'Q', or
+'Control-c', if that is what you want to do.
+
+To delimit some area on the screen, just click Button1 on your
+mouse and drag.  You should see a small window pop up that reads
+out the location (with respect to the root window) and the
+dimensions of the area you have outlined.  That's all there
+is to it!
+
+@node Command-line options, X Resources, How it works, Top
+@chapter Command-line options
+@cindex program options
+
+The possible command-line options for @code{xdelimitarea} are:
+
+@itemize @bullet
+@item
+@code{-help} is used to find out what command-line options are
+possible.
+
+@item
+@code{-fg} is used to specify the color of the text drawn
+in the readout window as you delimit some region on your
+computer screen.
+
+@item
+@code{-bg} is used to specify the background color of the
+readout window.
+
+@item
+@code{-font} is used to specify the name of the font used
+to render text in the readout window.
+
+@end itemize
+
+With the exception of @code{-help}, all command-line options
+can alternatively be specified as X Windows resources in,
+for example, your @code{.Xdefaults} file.  @xref{X Resources},
+for details.
+
+@node X Resources, Concept Index, Command-line options, Top
+@chapter X Resources
+@cindex X Windows resources
+
+The readout window for @code{xdelimitarea} can be configured
+with X Windows resources by, for example, adding suitable
+lines to your @code{.Xdefaults} file.
+
+@itemize @bullet
+@item
+Specify the default background for the readout window by
+adding a line like this:
+
+  @example
+  xdelimitarea.*.background:         green
+  @end example
+  @cindex background
+
+@item
+Specify the default foreground for the readout window by
+adding a line like this:
+
+  @example
+  xdelimitarea.*.foreground:         red
+  @end example
+  @cindex foreground
+
+@item
+Specify the default font for the readout window by
+adding a line like this:
+
+  @example
+  xdelimitarea.*.font:         -adobe-helvetica-bold-*-normal-*-12-*-*-*-*-*-*-*
+  @end example
+  @cindex font
+
+@end itemize
+
+@node Concept Index,  , X Resources, Top
+@unnumbered Concept Index
+
+@printindex cp
+
+@bye
